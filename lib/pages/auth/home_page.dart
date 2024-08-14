@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../services/auth_service.dart';
 import '../auth/login_page.dart';
 import '../kategori/list_kategori_page.dart'; // Import halaman Kategori
+import '../tag/list_tag_page.dart'; // Import halaman Tag
 
 class HomePage extends StatelessWidget {
   final AuthService _authService = AuthService();
@@ -43,6 +44,16 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: Text('Kategori'),
+            ),
+            SizedBox(height: 20), // Spacing between buttons
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ListTagPage()),
+                );
+              },
+              child: Text('Tag'),
             ),
           ],
         ),
